@@ -1,0 +1,48 @@
+<!-- <div class="center">
+  <table class="table table-sm table-dark">
+    <thead>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let item of lista; let primero = first; let ultimo = last" [ngClass]="{azul:primero, naranja:ultimo}">
+        <td>{{item}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<h3 class="text-center">Liga Nacional de Guatemala</h3>
+<div class="row justify-content-center">
+  <div class="col-auto">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" [ngStyle]="{'font-style': 'bold'}">APERTURA 2022</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">J</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">G</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">E</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">P</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">GF</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">GC</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">DIF</th>
+          <th scope="col" [ngStyle]="{'text-decoration': 'underline'}">PTS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let equipo of equipos; let index = index;">
+          <th scope="row">{{index + 1}}
+            <tr [ngClass]="{logo:equipo.logo}"><img src="{{equipo.logo}}" alt=""></tr>
+            <tr [ngClass]="{azul:index}" [ngStyle]="{'font-weight': 'normal', 'font-style': 'Arial'}">{{equipo.nombre}}</tr>
+          </th>
+          <td>{{equipo.juegos}}</td>
+          <td>{{equipo.ganados}}</td>
+          <td>{{equipo.empates}}</td>
+          <td>{{equipo.perdidos}}</td>
+          <td>{{equipo.golesfavor}}</td>
+          <td>{{equipo.golescontra}}</td>
+          <td [ngClass]="equipo.puntos >= 28 && equipo.puntos <=40 ? 'text-success' : 'text-danger' ">{{equipo.diferencia}}</td>
+          <td>{{equipo.puntos}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
